@@ -27,6 +27,5 @@ This is the application project.  I created 2 controllers, they are:
 
 
 Excluded features due to time constraints:
-1. Payment input validation
-2. Endpoint validation on a specific payment option page.  For example, if a user is attempting to access "/studentCharges/2/creditcard", there should be validation to ensure that a payment method is enabled for a specific customer.
+1.  Endpoint validation on a specific payment option page.  For example, if a user is attempting to access "/studentCharges/2/creditcard", there should be validation to ensure that a payment method is enabled for a specific customer.
 
