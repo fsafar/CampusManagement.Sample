@@ -1,0 +1,20 @@
+﻿@model CampusManagement.Web.Models.PaymentOptions.PayOptionsViewModel
+@{
+    ViewData["Title"] = "Pay";
+}
+
+<h1>Payment Options</h1>
+<div class="alert alert-info">
+    <div>@Html.DisplayNameFor(m => m.ChargeAmount): @Html.DisplayFor(m => m.ChargeAmount)</div>
+</div>
+@Html.DropDownListFor(m => m.SelectedPaymentOption, Model.PaymentOptions, new { @class="form-control"})
+
+@section Scripts
+{
+    <script>
+        $('#SelectedPaymentOption').change(function (e) {
+            console.log($(this).val());
+            window.location = '@Url.RouteUrl("PaymentOptionSelectRoute", new { chargeId = Model.ChargeId})' + '/' + $(this).val();
+        });
+    </script>
+}

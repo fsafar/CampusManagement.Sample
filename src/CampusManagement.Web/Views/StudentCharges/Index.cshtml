@@ -1,0 +1,26 @@
+﻿@model CampusManagement.Web.Models.StudentCharges.StudentChargesViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Student Charges</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Charge Name</th>
+        <th scope="col">Charge Amount</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var studentCharge in Model.StudentChargesList)
+        {
+            <tr>
+                <td>@studentCharge.ChargeName</td>
+                <td>@studentCharge.ChargeAmount</td>
+                <td><a href="@Url.RouteUrl("PaymentOptionRoute", new { chargeId = studentCharge.ChargeId, action = "Index"})">Pay Now</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

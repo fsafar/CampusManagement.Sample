@@ -1,0 +1,40 @@
+﻿@model CampusManagement.Web.Models.PaymentOptions.BankViewModel
+@{
+    ViewData["Title"] = "Bank Payment";
+}
+
+<h2>Your Bank Information</h2>
+<div class="alert alert-info">
+    <div>@Html.DisplayNameFor(m => m.ChargeAmount): @Html.DisplayFor(m => m.ChargeAmount)</div>
+</div>
+<form asp-controller="PaymentOptions" asp-action="Bank" method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.RoutingNumber)
+            @Html.TextBoxFor(m => m.RoutingNumber, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(m => m.RoutingNumber)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.AccountNumber)
+            @Html.TextBoxFor(m => m.AccountNumber, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(m => m.AccountNumber)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.HiddenFor(m => m.ChargeId)
+            @Html.HiddenFor(m => m.ChargeAmount)
+            <input type="submit" class="btn btn-primary" value="Pay"/>
+        </div>
+    </div>
+</form>
+

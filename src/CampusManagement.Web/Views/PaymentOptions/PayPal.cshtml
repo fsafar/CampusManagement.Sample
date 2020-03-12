@@ -1,0 +1,33 @@
+﻿@model CampusManagement.Web.Models.PaymentOptions.PaypalViewModel
+@{
+    ViewData["Title"] = "Pay Pal Payment";
+}
+
+<h2>Your PayPal Information</h2>
+<div class="alert alert-info">
+    <div>@Html.DisplayNameFor(m => m.ChargeAmount): @Html.DisplayFor(m => m.ChargeAmount)</div>
+</div>
+<form asp-controller="PaymentOptions" asp-action="PayPal" method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Username)
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(m => m.Username)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.LabelFor(m => m.Password)
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            @Html.HiddenFor(m => m.ChargeId)
+            @Html.HiddenFor(m => m.ChargeAmount)
+            <input type="submit" class="btn btn-primary" value="Pay" />
+        </div>
+    </div>
+</form>
+
