@@ -7,10 +7,9 @@ This sample payment options code was created with a .NET Core 3.0 MVC applicatio
 3. CampusManagement.Web
 
 
-
 # CampusManagement.Data
 
-This project contains queries that can be used to retrieve data/configurations from the applicable data source for Campus Management.  I only hardcoded some values in these query implementations for testing purposes.
+This project contains queries that can be used to retrieve data/configurations from the applicable data source for Campus Management.  I only hardcoded some values in these query implementations for demonstration purposes.
 These queries could clearly be refactored to use common interfaces for code reuse, but I chose to keep as is due to time constraints.
 
 
