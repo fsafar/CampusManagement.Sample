@@ -7,6 +7,12 @@
 <div class="alert alert-info">
     <div>@Html.DisplayNameFor(m => m.ChargeAmount): @Html.DisplayFor(m => m.ChargeAmount)</div>
 </div>
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary()
+    </div>
+}
 <form asp-controller="PaymentOptions" asp-action="Bank" method="post">
     <div class="row">
         <div class="col-md-6 mb-3">
